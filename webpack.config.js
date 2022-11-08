@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path"); // untuk keperluan generate file kedalam suatu folder
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   devServer: {
     static: {
       directory: path.join(__dirname, "src"),
@@ -14,14 +14,14 @@ module.exports = {
   },
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "./public/assets/js"),
+    path: path.resolve(__dirname, "./build"),
     filename: "main.[contenthash].js",
     assetModuleFilename: "images/[hash][ext]",
     clean: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/html/template.html",
+      template: "./src/template.html",
     }),
     new MiniCssExtractPlugin({
       filename: "main.[contenthash].css",
