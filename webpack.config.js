@@ -1,4 +1,6 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path"); // untuk keperluan generate file kedalam suatu folder
 
@@ -18,6 +20,17 @@ module.exports = {
     filename: "main.[contenthash].js",
     assetModuleFilename: "images/[hash][ext]",
     clean: true,
+  },
+  optimization: {
+    minimizer: [
+      `...`,
+      new CssMinimizerPlugin(),
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.squooshMinify,
+        },
+      }),
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
