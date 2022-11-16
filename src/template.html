@@ -4,16 +4,294 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Document</title>
   </head>
-  <body class="bg-green-700">
-    <h1 class="font-bold">gue apus dulu</h1>
-    <h1 class="text-blue-900">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet possimus et
-      nihil deserunt ipsam dignissimos, tenetur pariatur veritatis corrupti,
-      voluptatibus aut, quis aspernatur mollitia iusto.
-    </h1>
-    <img src="./images/anime.jpg" alt="anime" />
+  <body class="font-roboto font-normal text-base text-slate-200 bg-[#111]">
+    <div id="root">
+      <nav
+        class="bg-gradient-to-b from-[rgba(0,0,0,.7)] to-transparent h-[100px] flex items-center fixed inset-x-0 top-0 z-[999]"
+      >
+        <div
+          class="w-[95vw] lg:w-[80vw] sm:w-[90vw] mx-auto flex justify-between items-center"
+        >
+          <h3 class="font-extrabold text-[24px] text-red-700">DicodingFlix</h3>
+          <div class="">
+            <span class="font-light">Hello,</span>
+            <p class="">Kale!</p>
+          </div>
+        </div>
+      </nav>
+
+      <header
+        class="h-[80vh] bg-[url('https://source.unsplash.com/random/600x600')] bg-no-repeat bg-center bg-cover relative"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-[#111] to-transparent"
+        ></div>
+        <section
+          class="w-[95vw] lg:w-[80vw] sm:w-[90vw] mx-auto flex items-center h-full"
+        >
+          <article class="z-[1] w-3/6">
+            <h1 class="text-[48px] font-bold">The Crown</h1>
+            <p class="pt-[20px] pb-[30px]">
+              The gripping, decades-spanning inside story of Her Majesty Queen
+              Elizabeth II and the Prime Ministers who shaped Britain's post-war
+              destiny. The Crown tells the inside story of two of the most
+              famous addresses in the world – Buckingham Palace and 10 Downing
+              Street – and...
+            </p>
+
+            <div class="flex gap-[15px]">
+              <button
+                class="flex items-center gap-[10px] bg-[#f6f6f4] text-[#111] px-[20px] py-[8px] rounded-[5px]"
+              >
+                <img
+                  class="block w-[16px]"
+                  src="./images/play-solid.png"
+                  alt="play-btn"
+                />
+
+                <span class="font-bold">Play</span>
+              </button>
+
+              <button
+                class="flex items-center gap-3 bg-[#f6f6f433] px-[20px] py-[8px] rounded-[5px]"
+              >
+                <img
+                  class="block w-[18px]"
+                  src="./images/circle-info-solid.png"
+                  alt="info-btn"
+                />
+
+                <span class="font-bold">More info</span>
+              </button>
+            </div>
+          </article>
+        </section>
+      </header>
+    </div>
+    <!-- !:: template modal -->
+    <!-- <div
+      class="relative z-10"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+   
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+      ></div>
+
+      <div class="fixed inset-0 z-10 overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+  
+          <div
+            class="min-w-[70vw] relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+          >
+            <div class="bg-red-600 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+              <div class="sm:flex sm:items-start">
+                <div
+                  class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10"
+                >
+                  <svg
+                    class="h-6 w-6 text-red-600"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 10.5v3.75m-9.303 3.376C1.83 19.126 2.914 21 4.645 21h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 4.88c-.866-1.501-3.032-1.501-3.898 0L2.697 17.626zM12 17.25h.007v.008H12v-.008z"
+                    />
+                  </svg>
+                </div>
+                <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                  <h3
+                    class="text-lg font-medium leading-6 text-gray-900"
+                    id="modal-title"
+                  >
+                    Deactivate account
+                  </h3>
+                  <div class="mt-2">
+                    <p class="text-sm text-gray-500">
+                      Are you sure you want to deactivate your account? All of
+                      your data will be permanently removed. This action cannot
+                      be undone. Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Nulla impedit, natus perspiciatis
+                      exercitationem laboriosam magnam quidem velit dicta
+                      mollitia quas quibusdam nostrum doloribus iste vel
+                      reiciendis. Perferendis, illo! Voluptas veniam nulla
+                      doloribus rerum repellendus officia magnam totam
+                      accusamus, error saepe iste eius unde debitis hic dolorum
+                      ipsam dignissimos quia autem, laudantium distinctio
+                      quaerat mollitia! Beatae voluptas ut quas, quos iure iste
+                      ab provident fugiat aliquam nisi asperiores aperiam hic
+                      ipsam nulla nihil! Dolor asperiores maxime ut sunt unde
+                      aliquid porro perferendis? Quibusdam quasi eum architecto
+                      suscipit, odio perspiciatis, voluptas incidunt officia sit
+                      distinctio, quas impedit! Eveniet omnis mollitia eaque,
+                      qui voluptates dignissimos culpa nihil at harum veritatis
+                      non aliquid vel quis beatae perspiciatis fuga perferendis
+                      deserunt amet nemo? Tenetur autem voluptate eveniet omnis
+                      incidunt quisquam in consectetur nesciunt quas, laboriosam
+                      vel et exercitationem porro qui odit dignissimos? Ducimus
+                      id aliquid repellat recusandae quae? Autem fugiat sapiente
+                      magni suscipit quis natus consequuntur assumenda. Ut,
+                      voluptatibus consectetur quasi perferendis reprehenderit
+                      debitis exercitationem omnis vero atque, placeat, illum
+                      sunt quo assumenda velit? Optio, nemo odio voluptas unde
+                      quia tempore et dolore quisquam ipsam iure ut numquam
+                      dicta necessitatibus cupiditate amet provident modi sed
+                      perferendis adipisci, explicabo tenetur voluptatibus
+                      repudiandae placeat? Quidem asperiores voluptatem omnis,
+                      modi quia aliquam odit, alias dicta ut doloribus placeat
+                      quaerat inventore non, in perferendis voluptatum
+                      repellendus laborum explicabo. Dolores illo perferendis
+                      pariatur. Doloribus dolore possimus voluptatem cupiditate
+                      laudantium ad pariatur eveniet, recusandae numquam soluta
+                      corporis quidem fugiat laboriosam excepturi aspernatur
+                      similique labore, error nisi voluptatibus. Est nulla
+                      adipisci iste. Quis nesciunt facere necessitatibus
+                      perspiciatis dignissimos rem modi vel ducimus cumque
+                      nulla, nostrum quia aspernatur dolorum labore repudiandae
+                      tenetur sint voluptas voluptatibus? Velit magni illo
+                      incidunt ab consequatur excepturi ipsam voluptatum
+                      adipisci eligendi, sapiente odio. Soluta vel modi quo
+                      voluptatem optio, consectetur dolor impedit perferendis
+                      sunt voluptate reiciendis nesciunt corporis incidunt qui
+                      est. Provident, facere assumenda? Nostrum alias, excepturi
+                      necessitatibus officia iure consectetur incidunt. Ipsum,
+                      sed! Ullam voluptas, cupiditate cumque dolor commodi
+                      expedita repellat in libero autem animi voluptatum,
+                      tenetur non ipsam, at doloremque nihil nulla? Soluta,
+                      natus! Nemo, voluptatum laborum sunt omnis, sed illum
+                      porro temporibus hic culpa ullam ratione id. Vel veniam
+                      praesentium iste dolor perspiciatis reprehenderit odio
+                      nulla debitis ullam nihil repellendus reiciendis corrupti
+                      aliquam dolorum delectus, deserunt ducimus a, possimus ad
+                      fuga ipsa ab? Et sed tenetur, illum corrupti cumque, iste
+                      vitae quo molestiae est exercitationem officiis maxime
+                      quaerat placeat ad dolorum soluta nulla sit fuga
+                      voluptates repudiandae. Quibusdam neque, atque nobis ad
+                      porro officiis sit odit necessitatibus numquam laboriosam
+                      dolores cumque architecto, temporibus voluptatum.
+                      Blanditiis molestias ab possimus, veniam provident ullam
+                      nemo iste harum iusto recusandae dignissimos aut ut
+                      eveniet velit non quo nam inventore soluta atque fugiat
+                      asperiores id eaque perferendis dolorum. Possimus sunt nam
+                      eius fuga aliquid harum reprehenderit dolor sapiente
+                      ratione repellat dolorem, perspiciatis in ipsum deserunt
+                      at recusandae. Eligendi nam atque delectus harum maiores
+                      ab sed, inventore laudantium quas! Officiis, velit.
+                      Praesentium id sequi quo reprehenderit, mollitia
+                      accusantium ad nam ex ut dolores iusto assumenda fuga,
+                      odio asperiores ipsum officia nisi. Are you sure you want
+                      to deactivate your account? All of your data will be
+                      permanently removed. This action cannot be undone. Lorem
+                      ipsum dolor sit amet consectetur adipisicing elit. Nulla
+                      impedit, natus perspiciatis exercitationem laboriosam
+                      magnam quidem velit dicta mollitia quas quibusdam nostrum
+                      doloribus iste vel reiciendis. Perferendis, illo! Voluptas
+                      veniam nulla doloribus rerum repellendus officia magnam
+                      totam accusamus, error saepe iste eius unde debitis hic
+                      dolorum ipsam dignissimos quia autem, laudantium
+                      distinctio quaerat mollitia! Beatae voluptas ut quas, quos
+                      iure iste ab provident fugiat aliquam nisi asperiores
+                      aperiam hic ipsam nulla nihil! Dolor asperiores maxime ut
+                      sunt unde aliquid porro perferendis? Quibusdam quasi eum
+                      architecto suscipit, odio perspiciatis, voluptas incidunt
+                      officia sit distinctio, quas impedit! Eveniet omnis
+                      mollitia eaque, qui voluptates dignissimos culpa nihil at
+                      harum veritatis non aliquid vel quis beatae perspiciatis
+                      fuga perferendis deserunt amet nemo? Tenetur autem
+                      voluptate eveniet omnis incidunt quisquam in consectetur
+                      nesciunt quas, laboriosam vel et exercitationem porro qui
+                      odit dignissimos? Ducimus id aliquid repellat recusandae
+                      quae? Autem fugiat sapiente magni suscipit quis natus
+                      consequuntur assumenda. Ut, voluptatibus consectetur quasi
+                      perferendis reprehenderit debitis exercitationem omnis
+                      vero atque, placeat, illum sunt quo assumenda velit?
+                      Optio, nemo odio voluptas unde quia tempore et dolore
+                      quisquam ipsam iure ut numquam dicta necessitatibus
+                      cupiditate amet provident modi sed perferendis adipisci,
+                      explicabo tenetur voluptatibus repudiandae placeat? Quidem
+                      asperiores voluptatem omnis, modi quia aliquam odit, alias
+                      dicta ut doloribus placeat quaerat inventore non, in
+                      perferendis voluptatum repellendus laborum explicabo.
+                      Dolores illo perferendis pariatur. Doloribus dolore
+                      possimus voluptatem cupiditate laudantium ad pariatur
+                      eveniet, recusandae numquam soluta corporis quidem fugiat
+                      laboriosam excepturi aspernatur similique labore, error
+                      nisi voluptatibus. Est nulla adipisci iste. Quis nesciunt
+                      facere necessitatibus perspiciatis dignissimos rem modi
+                      vel ducimus cumque nulla, nostrum quia aspernatur dolorum
+                      labore repudiandae tenetur sint voluptas voluptatibus?
+                      Velit magni illo incidunt ab consequatur excepturi ipsam
+                      voluptatum adipisci eligendi, sapiente odio. Soluta vel
+                      modi quo voluptatem optio, consectetur dolor impedit
+                      perferendis sunt voluptate reiciendis nesciunt corporis
+                      incidunt qui est. Provident, facere assumenda? Nostrum
+                      alias, excepturi necessitatibus officia iure consectetur
+                      incidunt. Ipsum, sed! Ullam voluptas, cupiditate cumque
+                      dolor commodi expedita repellat in libero autem animi
+                      voluptatum, tenetur non ipsam, at doloremque nihil nulla?
+                      Soluta, natus! Nemo, voluptatum laborum sunt omnis, sed
+                      illum porro temporibus hic culpa ullam ratione id. Vel
+                      veniam praesentium iste dolor perspiciatis reprehenderit
+                      odio nulla debitis ullam nihil repellendus reiciendis
+                      corrupti aliquam dolorum delectus, deserunt ducimus a,
+                      possimus ad fuga ipsa ab? Et sed tenetur, illum corrupti
+                      cumque, iste vitae quo molestiae est exercitationem
+                      officiis maxime quaerat placeat ad dolorum soluta nulla
+                      sit fuga voluptates repudiandae. Quibusdam neque, atque
+                      nobis ad porro officiis sit odit necessitatibus numquam
+                      laboriosam dolores cumque architecto, temporibus
+                      voluptatum. Blanditiis molestias ab possimus, veniam
+                      provident ullam nemo iste harum iusto recusandae
+                      dignissimos aut ut eveniet velit non quo nam inventore
+                      soluta atque fugiat asperiores id eaque perferendis
+                      dolorum. Possimus sunt nam eius fuga aliquid harum
+                      reprehenderit dolor sapiente ratione repellat dolorem,
+                      perspiciatis in ipsum deserunt at recusandae. Eligendi nam
+                      atque delectus harum maiores ab sed, inventore laudantium
+                      quas! Officiis, velit. Praesentium id sequi quo
+                      reprehenderit, mollitia accusantium ad nam ex ut dolores
+                      iusto assumenda fuga, odio asperiores ipsum officia nisi.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+            >
+              <button
+                type="button"
+                class="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
+              >
+                Deactivate
+              </button>
+              <button
+                type="button"
+                class="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
   </body>
 </html>
