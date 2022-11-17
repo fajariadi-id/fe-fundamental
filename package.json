@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "tailwindcss -i ./src/tailwind.css -o ./src/styles.css --watch",
     "build": "webpack",
-    "dev": "webpack serve"
+    "start": "webpack serve"
   },
   "keywords": [],
   "author": "",

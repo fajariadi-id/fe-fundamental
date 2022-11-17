@@ -1,3 +1,5 @@
+import marquee from "vanilla-marquee";
+
 import "./styles.css";
 
 const sum = (a, b) => {
@@ -5,6 +7,28 @@ const sum = (a, b) => {
 };
 
 console.log(sum(12, 3));
+
+new marquee(document.getElementById("coming-soon-1"), {
+  duplicated: true,
+  gap: 0,
+  speed: 50,
+  startVisible: true,
+});
+
+new marquee(document.getElementById("coming-soon-2"), {
+  duplicated: true,
+  gap: 0,
+  speed: 50,
+  startVisible: true,
+  direction: "right",
+});
+
+new marquee(document.getElementById("coming-soon-3"), {
+  duplicated: true,
+  gap: 0,
+  speed: 100,
+  startVisible: true,
+});
 
 // !======= API =======*
 // !:: -> now playing -> https://api.themoviedb.org/3/movie/now_playing?api_key=8474014efb37e489ad1a5299e6ae7a88&language=en-US&page=1
