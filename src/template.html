@@ -27,8 +27,9 @@
         </div>
       </nav>
 
+      <!-- !:: header hero -->
       <header
-        class="h-[80vh] bg-[url('https://source.unsplash.com/random/600x600')] bg-no-repeat bg-center bg-cover relative"
+        class="h-screen md:h-[80vh] bg-[url('https://source.unsplash.com/random/600x600')] bg-no-repeat bg-center bg-cover relative"
       >
         <div
           class="absolute inset-0 bg-gradient-to-t from-[#111] to-transparent"
@@ -36,7 +37,7 @@
         <section
           class="w-[95vw] lg:w-[80vw] sm:w-[90vw] mx-auto flex items-center h-full"
         >
-          <article class="z-[1] w-3/6">
+          <article class="z-[1] w-screen md:w-[50vw]">
             <h1 class="text-[48px] font-bold">The Crown</h1>
             <p class="pt-[20px] pb-[30px]">
               The gripping, decades-spanning inside story of Her Majesty Queen
@@ -48,7 +49,7 @@
 
             <div class="flex gap-[15px]">
               <button
-                class="flex items-center gap-[10px] bg-[#f6f6f4] text-[#111] px-[20px] py-[8px] rounded-[5px]"
+                class="flex items-center gap-[10px] bg-[#f6f6f4] hover:bg-[#f6f6f4cc] transition-all duration-300 ease-in-out text-[#111] px-[20px] py-[8px] rounded-[5px]"
               >
                 <img
                   class="block w-[16px]"
@@ -60,7 +61,7 @@
               </button>
 
               <button
-                class="flex items-center gap-3 bg-[#f6f6f433] px-[20px] py-[8px] rounded-[5px]"
+                class="flex items-center gap-3 bg-[#f6f6f433] hover:bg-[#f6f6f41a] transition-all duration-300 ease-in-out px-[20px] py-[8px] rounded-[5px]"
               >
                 <img
                   class="block w-[18px]"
@@ -75,6 +76,7 @@
         </section>
       </header>
     </div>
+
     <!-- !:: template modal -->
     <!-- <div
       class="relative z-10"
