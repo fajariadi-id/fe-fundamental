@@ -1,12 +1,5 @@
 import marquee from "vanilla-marquee";
-
 import "./styles.css";
-
-const sum = (a, b) => {
-  return a + b;
-};
-
-console.log(sum(12, 3));
 
 new marquee(document.getElementById("coming-soon-1"), {
   duplicated: true,
@@ -40,7 +33,7 @@ new marquee(document.getElementById("coming-soon-3"), {
 // !:: -> videos -> https://api.themoviedb.org/3/movie/663712/videos?api_key=8474014efb37e489ad1a5299e6ae7a88&language=en-US
 
 const API_URL =
-  "https://api.themoviedb.org/3/movie/663712/videos?api_key=8474014efb37e489ad1a5299e6ae7a88&language=en-US";
+  "https://api.themoviedb.org/3/movie/now_playing?api_key=8474014efb37e489ad1a5299e6ae7a88&language=en-US&page=1";
 const IMG_PATH =
   "https://image.tmdb.org/t/p/original/oFAukXiMPrwLpbulGmB5suEZlrm.jpg";
 const SEARCH_API =
@@ -54,3 +47,7 @@ async function getMovies(url) {
 }
 
 getMovies(API_URL);
+
+const btnMoreInfo = document.querySelector(".more-info");
+
+btnMoreInfo.addEventListener("click", (e) => console.log("moreroemoremor"));
