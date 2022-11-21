@@ -591,6 +591,10 @@ video {
   left: 20px;
 }
 
+.right-0 {
+  right: 0px;
+}
+
 .z-\[99\] {
   z-index: 99;
 }
@@ -633,6 +637,10 @@ video {
 
 .mr-\[10px\] {
   margin-right: 10px;
+}
+
+.mt-\[50px\] {
+  margin-top: 50px;
 }
 
 .block {
@@ -744,6 +752,10 @@ video {
   cursor: pointer;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .flex-col-reverse {
   flex-direction: column-reverse;
 }
@@ -754,6 +766,10 @@ video {
 
 .content-between {
   align-content: space-between;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .items-end {
@@ -856,6 +872,14 @@ video {
   --tw-bg-opacity: 0.5;
 }
 
+.bg-opacity-90 {
+  --tw-bg-opacity: 0.9;
+}
+
+.bg-opacity-10 {
+  --tw-bg-opacity: 0.1;
+}
+
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -883,6 +907,12 @@ video {
 .from-red {
   --tw-gradient-from: #B22727;
   --tw-gradient-to: rgb(178 39 39 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-\[rgba\(0\2c 0\2c 0\2c \.5\)\] {
+  --tw-gradient-from: rgba(0,0,0,.5);
+  --tw-gradient-to: rgb(0 0 0 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
@@ -923,6 +953,10 @@ video {
   padding: 7px;
 }
 
+.p-\[10px\] {
+  padding: 10px;
+}
+
 .px-\[20px\] {
   padding-left: 20px;
   padding-right: 20px;
@@ -953,12 +987,35 @@ video {
   padding-right: 5px;
 }
 
+.py-\[3px\] {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.px-\[7px\] {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.px-\[10px\] {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .pt-\[20px\] {
   padding-top: 20px;
 }
 
 .pb-\[30px\] {
   padding-bottom: 30px;
+}
+
+.pt-\[3px\] {
+  padding-top: 3px;
+}
+
+.pb-\[5px\] {
+  padding-bottom: 5px;
 }
 
 .text-left {
@@ -1125,6 +1182,10 @@ video {
     flex-direction: row-reverse;
   }
 
+  .sm\:items-start {
+    align-items: flex-start;
+  }
+
   .sm\:items-center {
     align-items: center;
   }
@@ -1193,6 +1254,10 @@ video {
 
   .md\:w-\[75vw\] {
     width: 75vw;
+  }
+
+  .md\:items-center {
+    align-items: center;
   }
 
   .md\:text-\[48px\] {
