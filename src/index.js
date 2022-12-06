@@ -55,6 +55,8 @@ async function getMovies(url1, url2) {
 
 getMovies(API_URL1, API_URL2);
 
+window.addEventListener("scroll", () => console.log("scrolll", window.scrollY));
+
 const body = document.querySelector("body");
 const btnMoreInfo = document.querySelector(".more-info");
 const modal = document.querySelector("#modal-detail");
