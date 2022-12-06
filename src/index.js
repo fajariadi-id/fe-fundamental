@@ -55,19 +55,119 @@ async function getMovies(url1, url2) {
 
 getMovies(API_URL1, API_URL2);
 
-window.addEventListener("scroll", () => console.log("scrolll", window.scrollY));
-
 const body = document.querySelector("body");
-const btnMoreInfo = document.querySelector(".more-info");
+// const btnMoreInfo = document.querySelector(".more-info");
 const modal = document.querySelector("#modal-detail");
 const closeModal = document.querySelector("#close-modal");
+const fixedNav = document.querySelector(".fixed-nav");
+const banner = document.querySelector("#banner");
 
-btnMoreInfo.addEventListener("click", (e) => {
-  modal.classList.remove("hidden");
-  body.classList.add("overflow-hidden");
-});
+// NAV HEIGHT
+// 20 -> selisih height 100px - 80px
+const navHeight = fixedNav.clientHeight - 20;
+
+// btnMoreInfo.addEventListener("click", (e) => {
+//   modal.classList.remove("hidden");
+//   body.classList.add("overflow-hidden");
+// });
 
 closeModal.addEventListener("click", () => {
   modal.classList.add("hidden");
   body.classList.remove("overflow-hidden");
 });
+
+window.addEventListener("DOMContentLoaded", (event) => {
+  showBanner();
+});
+// window.addEventListener("scroll", () => console.log("scrolll", window.scrollY));
+// NAV EVENT
+window.addEventListener("scroll", () => {
+  const scrollHeight = window.scrollY;
+  navTransition(scrollHeight);
+});
+
+// *=======  FUNCTION =======
+// NAV FUNC
+function navTransition(scroll) {
+  if (scroll > navHeight) {
+    fixedNav.classList.add("bg-black");
+    fixedNav.classList.add("drop-shadow");
+  } else {
+    fixedNav.classList.remove("bg-black");
+    fixedNav.classList.remove("drop-shadow");
+  }
+}
+
+const showBanner = () => {
+  const headerArticle = document.createElement("article");
+  headerArticle.classList.add(
+    "h-screen",
+    "md:h-[80vh]",
+    "bg-[url('https://source.unsplash.com/random/600x600')]",
+    "bg-no-repeat",
+    "bg-center",
+    "bg-cover",
+    "relative"
+  );
+
+  const headerOverlay = document.createElement("div");
+  headerOverlay.classList.add(
+    "absolute",
+    "inset-0",
+    "bg-gradient-to-t",
+    "from-black",
+    "to-transparent"
+  );
+
+  const headerContainer = document.createElement("section");
+  headerContainer.classList.add("container", "flex", "items-center", "h-full");
+
+  const headerContent = document.createElement("article");
+  headerContent.classList.add("z-[1]", "w-screen", "md:w-[50vw]");
+
+  const bannerTitle = document.createElement("h1");
+  bannerTitle.classList.add(
+    "text-[36px]",
+    "md:text-[48px]",
+    "font-bold",
+    "font-poppins"
+  );
+  bannerTitle.innerText = `The Crown`;
+
+  const bannerDescription = document.createElement("p");
+  bannerDescription.classList.add("pt-[20px]", "pb-[30px]");
+  bannerDescription.innerText = `The gripping, decades-spanning inside story of Her Majesty Queen
+                                Elizabeth II and the Prime Ministers who shaped Britain's post-war
+                                destiny. The Crown tells the inside story of two of the most
+                                famous addresses in the world – Buckingham Palace and 10 Downing
+                                Street – and...`;
+
+  const btnMoreInfo = document.createElement("button");
+  btnMoreInfo.classList.add(
+    "flex",
+    "items-center",
+    "gap-3",
+    "bg-white",
+    "bg-opacity-30",
+    "hover:bg-opacity-20",
+    "transition-all",
+    "duration-300",
+    "ease-in-out",
+    "px-[20px]",
+    "py-[8px]",
+    "rounded-[5px]"
+  );
+  btnMoreInfo.innerHTML = `<span class="font-bold">More info</span>`;
+  btnMoreInfo.addEventListener("click", () => console.log("addadadadadada"));
+
+  headerContent.appendChild(bannerTitle);
+  headerContent.appendChild(bannerDescription);
+  headerContent.appendChild(btnMoreInfo);
+
+  headerContainer.appendChild(headerContent);
+
+  headerArticle.appendChild(headerOverlay);
+  headerArticle.appendChild(headerContainer);
+
+  banner.appendChild(headerArticle);
+};
